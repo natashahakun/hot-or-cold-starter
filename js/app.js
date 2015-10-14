@@ -19,8 +19,10 @@ var count = 0;
 
 var guessingGame = function() {
   var guess = document.getElementById("userGuess").value;
-    if (guess <= (rand - 50) || guess >= (rand + 50)) {
-      document.getElementById("feedback").innerHTML = "Ice cold!";
+  if (isNaN(guess) === true || guess < 1 || guess > 100) {
+    document.getElementById("feedback").innerHTML = "Please enter a number between 1 and 100."
+    } else if (guess <= (rand - 50) || guess >= (rand + 50)) {
+        document.getElementById("feedback").innerHTML = "Ice cold!";
     } else if ((guess >= (rand - 49) && guess <= (rand - 30)) || (guess <= (rand + 49) && guess >= (rand + 30))) {
         document.getElementById("feedback").innerHTML = "Cold";
      } else if ((guess >= (rand - 29) && guess <= (rand - 20)) || (guess <= (rand + 29) && guess >= (rand + 20))) {
