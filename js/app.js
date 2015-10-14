@@ -42,5 +42,16 @@ var guessingGame = function() {
 
 window.onload = function(){
     var form = document.getElementById("guessButton");
-    form.addEventListener("click", guessingGame)
+    form.addEventListener("click", guessingGame);
+    var newGameClick = document.getElementById("new");
+    newGameClick.addEventListener("click", newGame);
 }
+
+var newGame = function(){
+  rand = Math.round(Math.random() * 101);
+  count = 0;
+  document.getElementById("feedback").innerHTML = "Make your guess!";
+  document.getElementById("guessList").innerHTML = "";
+  document.getElementById("count").innerHTML = "0";
+}
+
